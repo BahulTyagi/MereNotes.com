@@ -4,23 +4,69 @@ import {useState} from "react";
 
 const NoteState= (props)=>{
 
-    const s1={
-        "name": "Harry",
-        "class": "5b"
-    }
-    const[state, setState]=useState(s1);
-    const update= ()=>{
-        setTimeout(()=>{
-            setState({
-                "name":"Larryy",
-                "class": "first"
-            })
-        }, 1000);
-    }
+    const notesInitial=[
+        {
+          "_id": "6214d2062e62f77ff3a4202a",
+          "user": "620e38d8aa8af3b321302ddf",
+          "title": "Hey This is my first evera note",
+          "description": "checking the code if it is ok",
+          "tag": "codecheck",
+          "date": "2022-02-22T12:07:34.873Z",
+          "__v": 0
+        },
+        {
+          "_id": "6214d21a2e62f77ff3a4202c",
+          "user": "620e38d8aa8af3b321302ddf",
+          "title": "Heyoo This is my first evera note",
+          "description": "checking in the code if it is ok or note",
+          "tag": "codechecking in progress",
+          "date": "2022-02-22T12:07:54.554Z",
+          "__v": 0
+        },
+        {
+          "_id": "6214d2062e62f77ff3a4202a",
+          "user": "620e38d8aa8af3b321302ddf",
+          "title": "Hey This is my first evera note",
+          "description": "checking the code if it is ok",
+          "tag": "codecheck",
+          "date": "2022-02-22T12:07:34.873Z",
+          "__v": 0
+        },
+        {
+          "_id": "6214d21a2e62f77ff3a4202c",
+          "user": "620e38d8aa8af3b321302ddf",
+          "title": "Heyoo This is my first evera note",
+          "description": "checking in the code if it is ok or note",
+          "tag": "codechecking in progress",
+          "date": "2022-02-22T12:07:54.554Z",
+          "__v": 0
+        },
+        {
+          "_id": "6214d2062e62f77ff3a4202a",
+          "user": "620e38d8aa8af3b321302ddf",
+          "title": "Hey This is my first evera note",
+          "description": "checking the code if it is ok",
+          "tag": "codecheck",
+          "date": "2022-02-22T12:07:34.873Z",
+          "__v": 0
+        },
+        {
+          "_id": "6214d21a2e62f77ff3a4202c",
+          "user": "620e38d8aa8af3b321302ddf",
+          "title": "Heyoo This is my first evera note",
+          "description": "checking in the code if it is ok or note",
+          "tag": "codechecking in progress",
+          "date": "2022-02-22T12:07:54.554Z",
+          "__v": 0
+        }
+    ]
 
+      const [notes, setNotes]=useState(notesInitial);
+
+  
 
     return(
-        <NoteContext.Provider value={{state, update}}>
+        <NoteContext.Provider value={{notes, setNotes}}>
             {props.children}
         </NoteContext.Provider>
     )
