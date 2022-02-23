@@ -6,7 +6,7 @@ const NoteState= (props)=>{
 
     const notesInitial=[
         {
-          "_id": "6214d2062e62f77ff3a4202a",
+          "_id": "6214d2062e622f77ff3a4202a",
           "user": "620e38d8aa8af3b321302ddf",
           "title": "Hey This is my first evera note",
           "description": "checking the code if it is ok",
@@ -15,7 +15,7 @@ const NoteState= (props)=>{
           "__v": 0
         },
         {
-          "_id": "6214d21a2e62f77ff3a4202c",
+          "_id": "6214d211a2e62f77ff3a4202c",
           "user": "620e38d8aa8af3b321302ddf",
           "title": "Heyoo This is my first evera note",
           "description": "checking in the code if it is ok or note",
@@ -24,7 +24,7 @@ const NoteState= (props)=>{
           "__v": 0
         },
         {
-          "_id": "6214d2062e62f77ff3a4202a",
+          "_id": "6214d2062e62f77ff33a4202a",
           "user": "620e38d8aa8af3b321302ddf",
           "title": "Hey This is my first evera note",
           "description": "checking the code if it is ok",
@@ -33,7 +33,7 @@ const NoteState= (props)=>{
           "__v": 0
         },
         {
-          "_id": "6214d21a2e62f77ff3a4202c",
+          "_id": "6214d21a2e62f77ff3a42302c",
           "user": "620e38d8aa8af3b321302ddf",
           "title": "Heyoo This is my first evera note",
           "description": "checking in the code if it is ok or note",
@@ -42,7 +42,7 @@ const NoteState= (props)=>{
           "__v": 0
         },
         {
-          "_id": "6214d2062e62f77ff3a4202a",
+          "_id": "6214d2062e62f77ff3av4202a",
           "user": "620e38d8aa8af3b321302ddf",
           "title": "Hey This is my first evera note",
           "description": "checking the code if it is ok",
@@ -51,7 +51,7 @@ const NoteState= (props)=>{
           "__v": 0
         },
         {
-          "_id": "6214d21a2e62f77ff3a4202c",
+          "_id": "6214d21a2e62f7n7ff3a4202c",
           "user": "620e38d8aa8af3b321302ddf",
           "title": "Heyoo This is my first evera note",
           "description": "checking in the code if it is ok or note",
