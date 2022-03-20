@@ -29,29 +29,19 @@ const NoteState = (props) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////  
 
   //ADD A NOTE
-  const addNote = async (id, title, description, tag) => {
+  const addNote = async (title, description, tag) => {
 
     //API call
-    const response = await fetch(`${host}/api/notes/addnote/${id}`, {
+    const response = await fetch(`${host}/api/notes/addnote`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
             "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
       },
-      body: JSON.stringify({id, title, description, tag})
+      body: JSON.stringify({title, description, tag})
     });
 
-    const json = response.json();
-
-    const note = {
-      "_id": "6214d2bm1ssa22e62f7n7ff3a4202c",
-      "user": "620e38d8auba8af3b321302ddf",
-      "title": title,
-      "description": description,
-      "tag": tag,
-      "date": "2022-021-28T12:07:54.554Z",
-      "__v": 0
-    };
+    const note = await response.json();
     setNotes(notes.concat(note))
   }
 
@@ -89,7 +79,7 @@ const json =await response.json();
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-            "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
+         "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
       },
       body: JSON.stringify({title, description, tag})
     });
