@@ -6,3 +6,7 @@ Tech used in this project are MongoDB, Express, nodeJS, React.
 The MERN stack.
 
 This project will be updated day by day.
+
+The project code is available at master branch.
+
+Thankyou :)
