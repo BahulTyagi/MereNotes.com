@@ -2,14 +2,24 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../context/notes/noteContext';
 import NoteItem from './NoteItem';
 import AddNote from './AddNote';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Notes = () => {
+    let history=useHistory();
     const context = useContext(noteContext);
     const { notes, getNotes, editNote } = context;
    
     useEffect(() => {
+        if(localStorage.getItem('authToken')){
         getNotes()
+        }
+        else{
+            history.push('/login')
+        }
+        //eslint-disable-next-line  
     }, [])
+
+    //the above weird comment is added to remove a warning to make the console clean, please ignore it
 
     const [note, setNote] = useState({etitle: "", edescription:  "", etag:"default"})
 

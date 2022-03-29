@@ -1,3 +1,4 @@
+//NoteState.js
 import NoteContext from "./noteContext";
 import { useState } from "react";
 
@@ -18,7 +19,7 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
+        "auth-token": localStorage.getItem('authToken')
       },
     });
 
@@ -36,7 +37,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-            "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
+            "auth-token": localStorage.getItem('authToken')
       },
       body: JSON.stringify({title, description, tag})
     });
@@ -57,11 +58,12 @@ const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
   method: 'DELETE',
   headers: {
     'Content-Type': 'application/json',
-    "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
+    "auth-token": localStorage.getItem('authToken')
   },
 });
 
 const json =await response.json();
+console.log(json);
 
     const newNotes = notes.filter((note) => {
       return note._id !== id
@@ -79,12 +81,13 @@ const json =await response.json();
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-         "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIwZTM4ZDhhYThhZjNiMzIxMzAyZGRmIn0sImlhdCI6MTY0NTA5OTIyNH0.3nKcTC6b0g66bfQtsmR4KCprtPUCvq9eVIifXmoVldI"
+         "auth-token": localStorage.getItem('authToken')
       },
       body: JSON.stringify({title, description, tag})
     });
 
     const json = await response.json();
+    console.log(json);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
